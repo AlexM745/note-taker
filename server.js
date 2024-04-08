@@ -17,9 +17,20 @@ app.use(express.json());
 // express creates a path for all the files in the public folder.
 app.use (express.static("public"));
 
-// Routes
+// Routes //
 
 //HTML
+
+// GET route for the homepage
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/index.html"))
+})
+
+// GET route for notes page
+app.get('/notes',(req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
+})
+
 
 //API
 
