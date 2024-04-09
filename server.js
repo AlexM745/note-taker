@@ -38,7 +38,7 @@ app.get("/notes",(req, res)=>{
 app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./db/db.json"));
 })
-
+//POST API route to create a new note
 app.post("/api/notes", (req, res) => {
    
     //creates a new user note body
@@ -52,4 +52,17 @@ app.post("/api/notes", (req, res) => {
     //the response will be the note object
     res.JSON(db);
 
+})
+
+
+// Delete notes when button is clicked on the public side and note is deleted form the JSON file
+app. delete("/api/notes/:id", (req, res)=> {
+    
+    // using the id to delete the note that user wants to delete
+     const noteDelete = db.filter(item => item.id !== req.params.id)
+
+     // rewriting the json files so that it does not have the note the was delelted
+     fs.writeFileSync("./db/db.json", JSON.stringify(noteDelete));
+     // the reposnse will note have the deleted note
+     res.json(noteDelete)
 })
