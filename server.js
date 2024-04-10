@@ -22,7 +22,7 @@ app.use(express.static("public"));
 //Routes for the public folder files
 
 // GET route for the homepage
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 })
 
@@ -34,7 +34,7 @@ app.get("/notes", (req, res) => {
 
 //API
 
-// GET API route to read the db.json file to return all the saved as a JSON
+// GET API route to read the db.json file to return all the saved notes
 app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./db/db.json"));
 })
@@ -46,7 +46,7 @@ app.post("/api/notes", (req, res) => {
         title: req.body.title,
         text: req.body.text,
         id: uniqId()
-    }; 
+    };
 
     // adds the new note object created by user when saved
     db.push(userNote);
@@ -58,7 +58,7 @@ app.post("/api/notes", (req, res) => {
 });
 
 
-// Delete notes when button is clicked on the public side and note is deleted form the JSON file
+// express deletes notes when button is clicked on the public side and note is deleted form the JSON file
 app.delete("/api/notes/:id", (req, res) => {
 
     // using the id to delete the note that user wants to delete
@@ -69,4 +69,7 @@ app.delete("/api/notes/:id", (req, res) => {
     // the reposnse will note have the deleted note
     res.json(noteDelete);
 });
-
+// express listens in the 3001 port 
+app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT}`)
+);
