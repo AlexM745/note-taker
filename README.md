@@ -4,11 +4,12 @@
 
 
   ## Description
+
   This is an application is a note taker that can be used to write notes and save them. It uses Express.Js backend that will save and retrive note data from a JSON file. Uniquid package from NPM was also used in conjuction with Express.js. 
 
   It will be deployed to Render.
 
-  [View delployed Render App here.]()
+  [View delployed Render App here.](https://note-taker-pekp.onrender.com)
 
   Built with:
 
@@ -21,7 +22,11 @@
  ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
  
   ## Demonstration
-  
+
+  The GIF below will show functionality and appearance.
+
+  ![Note Taker homepage and then the notes page with existings notes on the left and empty note field on the right hand.](./assets/note-taker-demo.gif);
+
   ## Table of Contents
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
@@ -57,12 +62,14 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ```
 
   ## Installation
+
   In order to use this application you will need clone this project repository to your computer. Then write on your terminal the the following commands:
 
   `npm i ` For the required pakages.
 
   
   ## Usage
+
   After all the pakages are installed then write the following command on your command line that you need to open in the root folder of your project
 
   `node server.js` or `npm start`
@@ -79,6 +86,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
   
 
   ## Contribution
+  
   If you would like to contribute to the code or improve it you can fork the repository.
   
   ## License 
