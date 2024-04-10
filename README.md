@@ -65,7 +65,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
   ## Usage
   After all the pakages are installed then write the following command on your command line that you need to open in the root folder of your project
 
-  `node server.js`
+  `node server.js` or `npm start`
 
   This command will run the server where you will find the page http://localhost:3001. To stop or end the server in the CLI use the follwing key combination:
 

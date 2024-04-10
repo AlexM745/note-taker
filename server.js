@@ -1,4 +1,4 @@
-const express = require("express");// importing express 
+const express = require('express');// importing express 
 const db = require("./db/db.json");// importing db.json file where the user input will be stored.
 const uniqId = require('uniqid');// allows for unique ids to be created 
 // dependencies
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 //Routes for the public folder files
 
 // GET route for the homepage
-app.get("*", (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 })
 
